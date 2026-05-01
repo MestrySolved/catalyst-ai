@@ -1,0 +1,15 @@
+# Python environment
+__pycache__/
+.env
+
+# Credentials (NEVER PUSH THESE)
+*.json
+!metadata/network-config.json
+secrets/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Terraform (if you ever use it for local tests)
+.terraform/
+*.tfstate
