@@ -1,0 +1,5 @@
+google-cloud-aiplatform>=1.70.0
+langchain-google-vertexai
+pydantic
+ipython
+e2b-code-interpreter
