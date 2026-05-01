@@ -19,3 +19,7 @@ Instead of manual monitoring, we use a closed-loop system:
 ## 4. Visibility (The "Paper Trail")
 *   **Confluence:** Automated logs for every agent action.
 *   **Looker:** A dashboard that pulls from **BigQuery** so the team can see the migration's cost and health at a glance.
+
+<p align="center">
+  <img src="images/Catalyst-AI-Architecture.png" alt="Project Catalyst Architecture Diagram" width="800">
+</p>
