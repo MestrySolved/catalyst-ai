@@ -1,0 +1,35 @@
+name: Catalyst Agent Sync
+
+on:
+  push:
+    paths:
+      - 'agents/**'
+      - 'blueprints/**'
+      - 'metadata/**'
+  workflow_dispatch:
+
+jobs:
+  validate-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      - name: Install Validation Tools
+        run: pip install pydantic pyyaml
+
+      - name: Validate Metadata Structure
+        run: |
+          # Ensuring the network-config.json matches our architecture
+          python -c "import json; data=json.load(open('metadata/network-config.json')); assert 'environments' in data"
+
+      - name: Sync to Vertex AI Agent Engine
+        if: github.ref == 'refs/heads/main'
+        run: |
+          echo "Syncing updated Catalyst roles to Google Cloud..."
+          # In a real setup, this would use gcloud ai-platform to update the agent definition
