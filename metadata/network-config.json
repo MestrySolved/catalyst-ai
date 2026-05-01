@@ -1,0 +1,20 @@
+{
+  "project_name": "Project Catalyst",
+  "region": "asia-south1",
+  "environments": {
+    "dev": {
+      "cluster_id": "dev-mumbai-01",
+      "namespaces": ["na-ru-to-np", "sa-su-ke-np", "op-zo-ro-np"],
+      "ip_range": "10.1.0.0/16"
+    },
+    "prod": {
+      "cluster_id": "prod-mumbai-01",
+      "namespaces": ["go-jo-p", "le-vi-p"],
+      "ip_range": "10.3.0.0/16"
+    }
+  },
+  "governance": {
+    "max_pods_per_namespace": 20,
+    "budget_alert_threshold": 0.85
+  }
+}
