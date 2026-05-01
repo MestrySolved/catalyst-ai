@@ -1,0 +1,11 @@
+{
+  "latency_sli": {
+    "target": 250,
+    "unit": "ms",
+    "fail_action": "trigger_scaling_pipeline"
+  },
+  "availability_sli": {
+    "target": 99.9,
+    "fail_action": "notify_on_confluence_and_rollback"
+  }
+}
