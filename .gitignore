@@ -1,15 +1,27 @@
-# Python environment
+# --- Python Environment ---
 __pycache__/
+*.py[cod]
+*$py.class
 .env
+venv/
+env/
 
-# Credentials (NEVER PUSH THESE)
+# --- Jupyter Notebooks ---
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# --- GCP & Security (CRITICAL) ---
+# Never commit your actual service account keys
 *.json
 !metadata/network-config.json
-secrets/
+!observability/dynatrace-slis.json
 
-# Jupyter
-.ipynb_checkpoints/
-
-# Terraform (if you ever use it for local tests)
+# --- Terraform & IaC ---
 .terraform/
 *.tfstate
+*.tfstate.backup
+crash.log
+
+# --- System Files ---
+.DS_Store
+Thumbs.db
